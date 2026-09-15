@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIQUID SPACE // MediaPipe Hand Geometry</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="tech-header">
+        <div class="brand">
+            <span class="brand-mark"></span>
+            <div>
+                <div class="brand-title">LIQUID SPACE</div>
+                <div class="brand-subtitle">HAND GEOMETRY INTERFACE // 01</div>
+            </div>
+        </div>
+
+        <div class="system-status">
+            <span class="status-dot"></span>
+            <span id="statusText">INITIALIZING</span>
+        </div>
+    </div>
+
+    <main class="app">
+
+        <section class="control-panel">
+
+            <div class="panel-label">GEOMETRY MODE</div>
+
+            <div class="mode-selector">
+
+                <button class="mode-button active" data-mode="1">
+                    <span class="mode-number">01</span>
+                    <span class="mode-name">LINE</span>
+                    <span class="mode-desc">食指 · 单线</span>
+                </button>
+
+                <button class="mode-button" data-mode="2">
+                    <span class="mode-number">02</span>
+                    <span class="mode-name">PLANE</span>
+                    <span class="mode-desc">拇指 + 食指</span>
+                </button>
+
+                <button class="mode-button" data-mode="3">
+                    <span class="mode-number">03</span>
+                    <span class="mode-name">TRI-PRISM</span>
+                    <span class="mode-desc">三指 · 三棱体</span>
+                </button>
+
+                <button class="mode-button" data-mode="4">
+                    <span class="mode-number">04</span>
+                    <span class="mode-name">QUAD-PRISM</span>
+                    <span class="mode-desc">四指 · 四棱体</span>
+                </button>
+
+                <button class="mode-button" data-mode="5">
+                    <span class="mode-number">05</span>
+                    <span class="mode-name">PENTA-PRISM</span>
+                    <span class="mode-desc">五指 · 五棱体</span>
+                </button>
+
+            </div>
+
+            <div class="panel-info">
+                <span id="modeInfo">MODE 01 / TWO INDEX FINGERS</span>
+                <span id="handInfo">HANDS 0 / 2</span>
+            </div>
+
+        </section>
+
+        <section class="camera-container">
+
+            <video id="video" autoplay playsinline muted></video>
+            <canvas id="canvas"></canvas>
+
+            <div class="camera-overlay top-left"></div>
+            <div class="camera-overlay top-right"></div>
+            <div class="camera-overlay bottom-left"></div>
+            <div class="camera-overlay bottom-right"></div>
+
+            <div class="camera-meta">
+                <span>LIVE CAMERA</span>
+                <span id="fpsText">-- FPS</span>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <span>MEDIAPIPE HAND LANDMARK</span>
+        <span>LIQUID GLASS GEOMETRY ENGINE</span>
+        <span>MODE <strong id="footerMode">01</strong></span>
+    </footer>
+
+    <script type="module">
+        import {
+            FilesetResolver,
+            HandLandmarker
+        } from "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@1.0.1";
+
+        window.FilesetResolver = FilesetResolver;
+        window.HandLandmarker = HandLandmarker;
+    </script>
+
+    <script src="script1.js"></script>
+
+</body>
+</html>
