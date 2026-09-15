@@ -15,6 +15,7 @@
 
 👉 [在线演示](https://shawxyu.github.io/-Gesture-based-interaction/)
 等待几秒看到手部识别光点
+<img width="1240" height="696" alt="三指交互展示" src="https://github.com/user-attachments/assets/d84179f5-9d8a-4e97-ba97-9e1fdcbbe787" />
 ---
 
 ## ✋ 手势模式
